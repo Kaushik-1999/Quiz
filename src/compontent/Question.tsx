@@ -49,12 +49,9 @@ const Question: React.FC<QuestionProps> = ({
         {options.map((option) => (
           <div key={option}>
             <label
-              style={{
-                color:
-                  showCorrectAnswer && option === correctAnswer
-                    ? "green"
-                    : "black",
-              }}
+              className={`${
+                showCorrectAnswer && option === correctAnswer ? 'correct' : ''
+              }`}
             >
               <input
                 type="radio"
@@ -67,11 +64,11 @@ const Question: React.FC<QuestionProps> = ({
             </label>
           </div>
         ))}
-        <button type="submit" disabled={!selectedOption}>
+        <button type="submit" className="submit-button" disabled={!selectedOption}>
           Submit
         </button>
         {showNextButton && (
-          <button type="button" onClick={handleNext}>
+          <button type="button" className="next-button" onClick={handleNext}>
             Next
           </button>
         )}

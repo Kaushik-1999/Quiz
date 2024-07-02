@@ -21,7 +21,7 @@ const Quiz: React.FC = () => {
   useEffect(() => {
     setLoading(true);
     axios
-      .get('https://opentdb.com/api.php?amount=5&type=multiple')
+      .get('https://opentdb.com/api.php?amount=10&type=multiple')
       .then((response) => {
         const formattedData = response.data.results.map((item: any) => {
           return {
